@@ -6,12 +6,12 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:59:23 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/01 12:58:01 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/03 07:33:39 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LFT_TYPE_H
-# define LFT_TYPE_H
+#ifndef FT_TYPE_H
+# define FT_TYPE_H
 
 # define XA 0x200
 # define XS 0x100
@@ -41,5 +41,6 @@ int		ft_isupper(int c);
 int		ft_isxdigit(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int 		ft_isascii(int c);
 
 #endif

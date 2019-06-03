@@ -6,16 +6,15 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:50:42 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/01 12:59:23 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/03 09:21:07 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_type.h"
 
-int						ft_ctype(int c)
+int	ft_ctype(int c)
 {
-	static unsigned char tab[257] = {0,
+	static unsigned char tab[129] = {0,
 	BB, BB, BB, BB, BB, BB, BB, BB,
 	BB, CN, CN, CN, CN, CN, BB, BB,
 	BB, BB, BB, BB, BB, BB, BB, BB,
@@ -34,7 +33,7 @@ int						ft_ctype(int c)
 	LO, LO, LO, PU, PU, PU, PU, BB,
 	};
 
-	if (c < 257)
+	if (c >= 0 && c <= 127)
 		return (tab[c + 1]);
 	return (0);
 }

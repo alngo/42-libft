@@ -12,7 +12,8 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SUB_PATH = /{type,mem,assert}
+SUB_PATH = /{type,mem,assert,put,str,conv}
+
 SRC_NAME = 	assert/ft_assert.c\
 		assert/ft_test.c\
 		type/ft_ctype.c\
@@ -29,17 +30,70 @@ SRC_NAME = 	assert/ft_assert.c\
 		type/ft_isxdigit.c\
 		type/ft_tolower.c\
 		type/ft_toupper.c\
+		type/ft_isascii.c\
+		\
+		str/ft_strlen.c\
+		str/ft_strnlen.c\
+		str/ft_strcat.c\
+		str/ft_strchr.c\
+		str/ft_strclr.c\
+		str/ft_strcmp.c\
+		str/ft_strcpy.c\
+		str/ft_strdel.c\
+		str/ft_strdup.c\
+		str/ft_strequ.c\
+		str/ft_striter.c\
+		str/ft_striteri.c\
+		str/ft_strjoin.c\
+		str/ft_strlcat.c\
+		str/ft_strmap.c\
+		str/ft_strmapi.c\
+		str/ft_strncat.c\
+		str/ft_strncmp.c\
+		str/ft_strncpy.c\
+		str/ft_strnequ.c\
+		str/ft_strnew.c\
+		str/ft_strnstr.c\
+		str/ft_strrchr.c\
+		str/ft_strsplit.c\
+		str/ft_strstr.c\
+		str/ft_strsub.c\
+		str/ft_strtrim.c\
+		\
+		put/ft_putchar.c\
+		put/ft_putchar_fd.c\
+		put/ft_putendl.c\
+		put/ft_putendl_fd.c\
+		put/ft_putmem.c\
+		put/ft_putnbr.c\
+		put/ft_putnbr_fd.c\
+		put/ft_putstr.c\
+		put/ft_putstr_fd.c\
+		\
 		mem/ft_memset.c\
+		mem/ft_memalloc.c\
+		mem/ft_memccpy.c\
 		mem/ft_bzero.c\
+		mem/ft_memchr.c\
+		mem/ft_memcmp.c\
+		mem/ft_memcpy.c\
+		mem/ft_memdel.c\
+		mem/ft_memmove.c\
+		\
+		conv/ft_atoi.c\
+		conv/ft_atol.c\
+		conv/ft_stoul.c\
+		conv/ft_strol.c\
+		conv/ft_strtoul.c\
+		conv/ft_uimaxtoa_base.c\
+		conv/ft_imaxtoa.c\
+		conv/ft_itoa.c
+
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ_PATH = obj
 SRC_PATH = src
 INCLUDE_PATH = include
-
-TEST_NAME = test
-TEST_LIB = libft.a
-TEST_SRC = main.c
 
 LOG_CLEAR		= \033[2K
 LOG_UP 			= \033[A
@@ -75,9 +129,5 @@ fclean:	clean
 	$(RM) -r $(TEST_NAME)
 
 re:	fclean all
-
-test: ${NAME}
-	@${CC} -o $(TEST_NAME) $(CFLAGS) -I $(INCLUDE_PATH) $(SRC_PATH)/$(TEST_SRC) $(TEST_LIB)
-	@./test
 
 -include $(OBJ:.o=.d)

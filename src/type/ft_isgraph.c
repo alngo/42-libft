@@ -6,7 +6,7 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:50:42 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/01 13:00:25 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/03 14:25:14 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 int		ft_isgraph(int c)
 {
-	return (ft_ctype(c) & (DI | LO | PU | UP | XA));
+	return ((ft_ctype(c) & (DI | LO | PU | UP | XA)) ? 1 : 0);
 }

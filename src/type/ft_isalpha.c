@@ -6,7 +6,7 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:50:42 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/01 13:00:39 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/03 14:24:36 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 int		ft_isalpha(int c)
 {
-	return (ft_ctype(c) & (LO | UP | XA));
+	return ((ft_ctype(c) & (LO | UP | XA)) ? 1 : 0);
 }

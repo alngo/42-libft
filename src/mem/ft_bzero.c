@@ -6,13 +6,13 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 13:09:39 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/01 13:14:20 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/02 14:39:50 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *dst, size_t n)
 {
-	ft_memset(s, '\0', n);
+	ft_memset(dst, '\0', n);
 }

@@ -6,18 +6,21 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 13:10:34 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/01 13:18:57 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/03 08:22:42 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			*ft_memset(void *s, int c, size_t n)
+void			*ft_memset(void *dst, int c, size_t n)
 {
-	while (n--)
+	size_t		i;
+
+	i = 0;
+	while (i < n)
 	{
-		*(unsigned char *)s = (unsigned char)c;
-		s++;
+		((unsigned char *)dst)[i] = (unsigned char)c;
+		i++;
 	}
-	return (s);
+	return (dst);
 }
