@@ -12,7 +12,7 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SUB_PATH = /{type,mem,assert,put,str,conv,lst}
+SUB_PATH = /{type,mem,assert,put,str,conv,lst,gnl}
 
 SRC_NAME = 	assert/ft_assert.c\
 		assert/ft_test.c\
@@ -99,7 +99,9 @@ SRC_NAME = 	assert/ft_assert.c\
 		lst/ft_lstiter.c\
 		lst/ft_lstmap.c\
 		lst/ft_lstnew.c\
-		lst/ft_lstreverse.c
+		lst/ft_lstreverse.c\
+		\
+		gnl/ft_gnl.c
 
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
@@ -141,5 +143,9 @@ fclean:	clean
 	$(RM) -r $(TEST_NAME)
 
 re:	fclean all
+
+test: $(NAME)
+	@$(CC) -o ./test $(CFLAGS) -I $(INCLUDE_PATH) ./main.c $(NAME)
+	@./test Makefile
 
 -include $(OBJ:.o=.d)
