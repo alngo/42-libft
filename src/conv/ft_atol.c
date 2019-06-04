@@ -6,13 +6,13 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:32:55 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/02 16:20:49 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/04 10:26:56 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long		atol(const char *s)
+long		ft_atol(const char *s)
 {
 	return ((long)ft_stoul(s, NULL, 10));
 }
