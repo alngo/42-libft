@@ -6,7 +6,7 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:43:56 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/02 15:43:13 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/04 10:01:52 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
+
+  if (!*f)
+    return ;
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		(*f)(i, &s[i]);
 		i++;

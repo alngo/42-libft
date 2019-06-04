@@ -6,7 +6,7 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:43:56 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/03 09:10:37 by alngo            ###   ########.fr       */
+/*   Updated: 2019/06/04 09:50:09 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int			ft_strcmp(const char *s1, const char *s2)
 		s1++;
 		s2++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return ((unsigned char)*s1 < (unsigned char)*s2 ? -1 : 1);
 }
