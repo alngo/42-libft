@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstat.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/01 12:54:15 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/04 10:33:40 by alngo            ###   ########.fr       */
+/*   Created: 2016/11/29 14:19:04 by alngo             #+#    #+#             */
+/*   Updated: 2019/06/04 10:32:52 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 
-# include <limits.h>
-# include <errno.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stddef.h>
-# include "ft_assert.h"
-# include "ft_type.h"
-# include "ft_put.h"
-# include "ft_mem.h"
-# include "ft_str.h"
-# include "ft_conv.h"
-# include "ft_lst.h"
-
-# define MAX(a, b) a < b ? b : a
-# define MIN(a, b) a < b ? a : b
-
-#endif
+t_list					*ft_lstat(t_list *lst, size_t n)
+{
+	while (lst->next && n--)
+		lst = lst->next;
+	return (lst);
+}

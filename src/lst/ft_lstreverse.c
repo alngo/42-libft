@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstreverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/01 12:54:15 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/04 10:33:40 by alngo            ###   ########.fr       */
+/*   Created: 2017/09/25 16:30:49 by alngo             #+#    #+#             */
+/*   Updated: 2019/06/04 10:33:13 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 
-# include <limits.h>
-# include <errno.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stddef.h>
-# include "ft_assert.h"
-# include "ft_type.h"
-# include "ft_put.h"
-# include "ft_mem.h"
-# include "ft_str.h"
-# include "ft_conv.h"
-# include "ft_lst.h"
+t_list			*ft_lstreverse(t_list *lst)
+{
+	t_list		*prev;
+	t_list		*next;
 
-# define MAX(a, b) a < b ? b : a
-# define MIN(a, b) a < b ? a : b
-
-#endif
+	prev = NULL;
+	while (lst)
+	{
+		next = lst->next;
+		lst->next = prev;
+		prev = lst;
+		lst = next;
+	}
+	return (prev);
+}
