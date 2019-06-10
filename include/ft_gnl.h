@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/01 12:54:15 by alngo             #+#    #+#             */
-/*   Updated: 2019/06/06 00:17:53 by alngo            ###   ########.fr       */
+/*   Created: 2016/11/29 14:24:01 by alngo             #+#    #+#             */
+/*   Updated: 2017/10/12 19:30:06 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# include <limits.h>
-# include <errno.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stddef.h>
-# include <stdarg.h>
+# define BUFF_SIZE 42
+
 # include <sys/types.h>
 # include <sys/uio.h>
-# include "ft_assert.h"
-# include "ft_type.h"
-# include "ft_put.h"
-# include "ft_mem.h"
-# include "ft_str.h"
-# include "ft_conv.h"
-# include "ft_lst.h"
-# include "ft_gnl.h"
 
-# define MAX(a, b) a < b ? b : a
-# define MIN(a, b) a < b ? a : b
+typedef struct				s_gnl
+{
+	int						fd;
+	char					*str;
+	int						ret;
+	struct s_gnl			*next;
+}							t_gnl;
+
+int							gnl(int fd, char **line);
 
 #endif
