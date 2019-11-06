@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alngo <alngo@student.42.fr>                +#+  +:+       +#+         # #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/07/25 21:33:03 by alngo             #+#    #+#              #
-#    Updated: 2017/11/28 17:54:31 by alngo            ###   ########.fr        #
+#    By: alngo <alngo@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/10/22 13:19:23 by alngo             #+#    #+#              #
+#    Updated: 2019/10/22 13:19:25 by alngo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SUB_PATH = /{type,mem,assert,put,str,conv,lst,gnl}
+SUB_PATH = /{type,mem,assert,put,str,conv,lst,gnl,printf}
 
 SRC_NAME = 	assert/ft_assert.c\
 		assert/ft_test.c\
@@ -28,9 +29,11 @@ SRC_NAME = 	assert/ft_assert.c\
 		type/ft_isspace.c\
 		type/ft_isupper.c\
 		type/ft_isxdigit.c\
+		type/ft_isascii.c\
+		type/ft_lower.c\
+		type/ft_upper.c\
 		type/ft_tolower.c\
 		type/ft_toupper.c\
-		type/ft_isascii.c\
 		\
 		str/ft_strlen.c\
 		str/ft_strnlen.c\
@@ -85,8 +88,7 @@ SRC_NAME = 	assert/ft_assert.c\
 		conv/ft_stoul.c\
 		conv/ft_strtol.c\
 		conv/ft_strtoul.c\
-		conv/ft_uimaxtoa_base.c\
-		conv/ft_imaxtoa.c\
+		conv/ft_imaxtoa_base.c\
 		conv/ft_itoa.c\
 		\
 		lst/ft_lstadd.c\
@@ -101,8 +103,16 @@ SRC_NAME = 	assert/ft_assert.c\
 		lst/ft_lstnew.c\
 		lst/ft_lstreverse.c\
 		\
-		gnl/ft_gnl.c
-
+		gnl/ft_gnl.c\
+		\
+		printf/format_character.c\
+		printf/format_integer.c\
+		printf/format_pointer.c\
+		printf/format_string.c\
+		printf/format_color.c\
+		printf/ft_printf.c\
+		printf/get_parameters.c\
+		printf/out.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ_PATH = obj
@@ -118,7 +128,7 @@ LOG_YELLOW		= \033[1;33m
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
@@ -140,12 +150,7 @@ clean:
 
 fclean:	clean
 	$(RM) -r $(NAME)
-	$(RM) -r $(TEST_NAME)
 
 re:	fclean all
-
-test: $(NAME)
-	@$(CC) -o ./test $(CFLAGS) -I $(INCLUDE_PATH) ./main.c $(NAME)
-	@./test Makefile
 
 -include $(OBJ:.o=.d)

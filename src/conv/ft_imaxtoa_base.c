@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_imaxtoa_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/11 16:43:56 by alngo             #+#    #+#             */
-/*   Updated: 2019/09/11 11:54:11 by alngo            ###   ########.fr       */
+/*   Created: 2019/09/25 11:40:38 by alngo             #+#    #+#             */
+/*   Updated: 2019/09/25 11:40:39 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char			*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+char	*ft_imaxtoa_base(intmax_t value, uint8_t base, const char *cipher)
 {
-	int			i;
+	uintmax_t	i;
+	intmax_t	size;
 	char		*ret;
 
-	if (!f)
+	i = (value < 0) ? -value : value;
+	size = 1 + (value < 0);
+	while ((i /= base))
+		size++;
+	if (!(ret = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
-	if (!(ret = ft_strnew(ft_strlen(s))))
-		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ret[i] = (*f)(i, s[i]);
-		i++;
-	}
-	ret[i] = '\0';
+	ret[size] = '\0';
+	i = (value < 0) ? -value : value;
+	ret[--size] = cipher[i % base];
+	while ((i /= base))
+		ret[--size] = cipher[i % base];
+	if (value < 0)
+		ret[--size] = '-';
 	return (ret);
 }

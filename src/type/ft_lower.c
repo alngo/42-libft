@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 08:10:33 by alngo             #+#    #+#             */
-/*   Updated: 2019/09/18 11:41:39 by alngo            ###   ########.fr       */
+/*   Created: 2017/10/11 16:50:42 by alngo             #+#    #+#             */
+/*   Updated: 2019/06/01 12:59:43 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_type.h"
 
-char		*ft_itoa(int n)
+int		ft_lower(int c)
 {
-	return (ft_imaxtoa_base(n, 10, "0123456789abcdef"));
+	if (ft_isupper(c))
+		return (c + 32);
+	return (c);
 }
