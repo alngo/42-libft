@@ -6,7 +6,7 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 12:54:15 by alngo             #+#    #+#             */
-/*   Updated: 2019/09/11 12:59:21 by alngo            ###   ########.fr       */
+/*   Updated: 2019/11/27 10:51:53 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,5 @@
 
 # define MAX(a, b) a < b ? b : a
 # define MIN(a, b) a < b ? a : b
-
-typedef enum 	e_boolean
-{
-	FALSE,
-	TRUE
-}		t_boolean;
 
 #endif
