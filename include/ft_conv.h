@@ -6,14 +6,13 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:55:04 by alngo             #+#    #+#             */
-/*   Updated: 2019/09/18 11:42:45 by alngo            ###   ########.fr       */
+/*   Updated: 2019/12/17 19:48:22 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CONV_H
 # define FT_CONV_H
 
-# define ABS(x) x < 0 ? -x : x
 # define MBASE 36
 
 typedef struct		s_stoul

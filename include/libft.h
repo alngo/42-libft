@@ -6,7 +6,7 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 12:54:15 by alngo             #+#    #+#             */
-/*   Updated: 2019/11/27 10:51:53 by alngo            ###   ########.fr       */
+/*   Updated: 2019/12/17 19:49:17 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,5 @@
 # include "ft_lst.h"
 # include "ft_gnl.h"
 # include "ft_printf.h"
-
-# define MAX(a, b) a < b ? b : a
-# define MIN(a, b) a < b ? a : b
 
 #endif

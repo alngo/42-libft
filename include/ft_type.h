@@ -6,7 +6,7 @@
 /*   By: alngo <alngo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 16:59:23 by alngo             #+#    #+#             */
-/*   Updated: 2019/09/11 11:45:06 by alngo            ###   ########.fr       */
+/*   Updated: 2019/12/17 19:52:57 by alngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 # define SP 0x4
 # define UP 0x2
 # define XD 0x1
-# define XI (DI | XD)
-# define XO (LO | XD)
-# define XP (UP | XD)
+# define XI 0x21
+# define XO 0x11
+# define XP 0x3
 
 int		ft_ctype(int c);
 int		ft_isalnum(int c);
